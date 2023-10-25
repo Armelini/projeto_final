@@ -1,0 +1,57 @@
+{
+  "produtos": [
+    {
+      "nome": "Vitória",
+      "referencia": "123456_ABC",
+      "idCategoria": 1,
+      "idSubCategoria": 1,
+      "id": 1
+    },
+    {
+      "nome": "Isadora",
+      "referencia": "123456_CBA",
+      "idCategoria": 1,
+      "idSubCategoria": 1,
+      "id": 2
+    },
+    {
+      "nome": "Bruna",
+      "referencia": "456123_CBA",
+      "idCategoria": 1,
+      "idSubCategoria": 1,
+      "id": 3
+    }
+  ],
+  "categorias": [
+    {
+      "nome": "Banho",
+      "id": 1
+    },
+    {
+      "nome": "Rosto",
+      "id": 2
+    },
+    {
+      "nome": "Social",
+      "id": 3
+    },
+    {
+      "nome": "Piso",
+      "id": 4
+    }
+  ],
+  "subCategorias": [
+    {
+      "nome": "Básica",
+      "id": 1
+    },
+    {
+      "nome": "Mais",
+      "id": 2
+    },
+    {
+      "nome": "Luxo",
+      "id": 3
+    }
+  ]
+}
