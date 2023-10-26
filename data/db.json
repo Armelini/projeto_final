@@ -1,0 +1,35 @@
+{
+  "produtos": [],
+  "categorias": [
+    {
+      "nome": "Banho",
+      "id": 1
+    },
+    {
+      "nome": "Rosto",
+      "id": 2
+    },
+    {
+      "nome": "Social",
+      "id": 3
+    },
+    {
+      "nome": "Piso",
+      "id": 4
+    }
+  ],
+  "subCategorias": [
+    {
+      "nome": "Luxo",
+      "id": 1
+    },
+    {
+      "nome": "Casual",
+      "id": 2
+    },
+    {
+      "nome": "Básica",
+      "id": 3
+    }
+  ]
+}
