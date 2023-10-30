@@ -8,9 +8,8 @@ class Produto {
         this.idSerie = idSerie;
     }
 
-    static criar(produtos, nome, descricao, referencia, id, idLinha, idSerie) {
+    static criar(nome, descricao, referencia, id, idLinha, idSerie) {
         const produto = new Produto(nome, descricao, referencia, id, idLinha, idSerie);
-        produtos.push(produto);
         return produto;
     }
 

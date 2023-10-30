@@ -22,8 +22,13 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
     const { nome, descricao, referencia, idLinha, idSerie } = req.body;
     const id = db.db.get('produtos').value().length + 1; // Simplesmente incrementa o ID
-    const produto = Produto.criar(db.db.get("produtos"), nome, descricao, referencia, id, idLinha, idSerie)
-    res.json(201).json(produto);
+    const produto = Produto.criar(nome, descricao, referencia, id, idLinha, idSerie);
+    if (produto) { 
+        db.db.get('produtos').push(produto).write();
+        res.status(201).json(produto);
+    } else { 
+        res.status(500).json({ message: "Erro na inserção do produto!" });
+    }
 });
 
 router.put('/:id', (req, res) => {

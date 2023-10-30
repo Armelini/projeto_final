@@ -1,5 +1,14 @@
 {
-  "produtos": [],
+  "produtos": [
+    {
+      "nome": "nome",
+      "descricao": "descricao",
+      "referencia": "referencia",
+      "id": 1,
+      "idLinha": 1,
+      "idSerie": 1
+    }
+  ],
   "linhas": [
     {
       "nome": "Banho",
