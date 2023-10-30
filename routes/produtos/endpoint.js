@@ -20,16 +20,16 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-    const { nome, descricao, referencia, idCategoria, idSubcategoria } = req.body;
+    const { nome, descricao, referencia, idLinha, idSerie } = req.body;
     const id = db.db.get('produtos').value().length + 1; // Simplesmente incrementa o ID
-    const produto = Produto.criar(db.db.get("produtos"), nome, descricao, referencia, id, idCategoria, idSubcategoria)
+    const produto = Produto.criar(db.db.get("produtos"), nome, descricao, referencia, id, idLinha, idSerie)
     res.json(201).json(produto);
 });
 
 router.put('/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const { nome, descricao, referencia, idCategoria, idSubcategoria } = req.body;
-    const produto = Produto.atualizar(db.db.get('produtos'), nome, descricao, referencia, id, idCategoria, idSubcategoria);
+    const { nome, descricao, referencia, idLinha, idSerie } = req.body;
+    const produto = Produto.atualizar(db.db.get('produtos'), nome, descricao, referencia, id, idLinha, idSerie);
     if (produto) {
         res.json(produto);
     } else {

@@ -1,15 +1,15 @@
 class Produto {
-    constructor(nome, descricao, referencia, id, idCategoria, idSubcategoria) {
+    constructor(nome, descricao, referencia, id, idLinha, idSerie) {
         this.nome = nome;
         this.descricao = descricao;
         this.referencia = referencia;
         this.id = id;
-        this.idCategoria = idCategoria;
-        this.idSubcategoria = idSubcategoria;
+        this.idLinha = idLinha;
+        this.idSerie = idSerie;
     }
 
-    static criar(produtos, nome, descricao, referencia, id, idCategoria, idSubcategoria) {
-        const produto = new Produto(nome, descricao, referencia, id, idCategoria, idSubcategoria);
+    static criar(produtos, nome, descricao, referencia, id, idLinha, idSerie) {
+        const produto = new Produto(nome, descricao, referencia, id, idLinha, idSerie);
         produtos.push(produto);
         return produto;
     }
@@ -22,14 +22,14 @@ class Produto {
         return produtos.find((produto) => produto.id === id);
     }
 
-    static atualizar(produtos, nome, descricao, referencia, id, idCategoria, idSubcategoria) {
+    static atualizar(produtos, nome, descricao, referencia, id, idLinha, idSerie) {
         const produto = this.obter(produtos, id);
         if (produto) {
             produto.nome = nome;
             produto.descricao = descricao;
             produto.referencia = referencia;
-            produto.idCategoria = idCategoria;
-            produto.idSubcategoria = idSubcategoria;
+            produto.idLinha = idLinha;
+            produto.idSerie = idSerie;
             return produto;
         }
         return null;

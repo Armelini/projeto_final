@@ -1,6 +1,6 @@
 {
   "produtos": [],
-  "categorias": [
+  "linhas": [
     {
       "nome": "Banho",
       "id": 1
@@ -18,7 +18,7 @@
       "id": 4
     }
   ],
-  "subCategorias": [
+  "series": [
     {
       "nome": "Luxo",
       "id": 1
