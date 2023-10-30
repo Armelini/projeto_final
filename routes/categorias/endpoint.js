@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const jsonServer = require('json-server');
-const db = jsonServer.router('../../data/db.json');
+const db = jsonServer.router('data/db.json');
 const Categoria = require('./categoria');
 
 router.get("/", (req, res) => {
