@@ -47,6 +47,10 @@
     {
       "nome": "Básica",
       "id": 3
+    },
+    {
+      "nome": "Teste2",
+      "id": 4
     }
   ]
 }

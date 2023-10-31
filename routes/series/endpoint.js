@@ -20,7 +20,7 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-    const nome = req.body;
+    const nome = req.body.nome;
     const id = db.db.get('series').value().length + 1; // Simplesmente incrementa o ID
     const serie = Serie.criar(nome, id);
     if (serie) {
