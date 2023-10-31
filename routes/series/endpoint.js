@@ -34,7 +34,7 @@ router.post("/", (req, res) => {
 router.put('/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const nome = req.body.nome;
-    const serie = Serie.atualizar(db.db.get('series'), nome, id);
+    const serie = Serie.atualizar(db.db.get('series').value(), nome, id);
     if (serie) {
         res.json(serie);
     } else {
@@ -44,7 +44,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const serie = Serie.deletar(db.db.get('series'), id);
+    const serie = Serie.deletar(db.db.get('series').value(), id);
     if (serie) {
         res.json({ message: 'Série excluída com sucesso', serie });
     } else {

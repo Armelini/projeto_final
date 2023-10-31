@@ -1,20 +1,20 @@
 {
   "produtos": [
     {
-      "nome": "nome",
-      "descricao": "descricao",
-      "referencia": "referencia",
-      "id": 1,
-      "idLinha": 1,
-      "idSerie": 1
-    },
-    {
       "nome": "Vitória",
       "descricao": "Linha Banho; Série Luxo; Dimensões: 180cm x 65cm; 100% Algodão; Fio 30/1 penteado.",
       "referencia": "123456_ABC",
-      "id": 2,
+      "id": 1,
       "idLinha": 1,
       "idSerie": 3
+    },
+    {
+      "nome": "A",
+      "descricao": "A",
+      "referencia": "X",
+      "id": 2,
+      "idLinha": 2,
+      "idSerie": 2
     }
   ],
   "linhas": [
@@ -51,6 +51,10 @@
     {
       "nome": "Teste2",
       "id": 4
+    },
+    {
+      "nome": "Teste5",
+      "id": 5
     }
   ]
 }

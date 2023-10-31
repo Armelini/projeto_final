@@ -34,7 +34,7 @@ router.post("/", (req, res) => {
 router.put('/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const nome = req.body.nome;
-    const linha = Linha.atualizar(db.db.get('linhas'), nome, id);
+    const linha = Linha.atualizar(db.db.get('linhas').value(), nome, id);
     if (linha) {
         res.json(linha);
     } else {
@@ -44,7 +44,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const linha = Linha.deletar(db.db.get('linhas'), id);
+    const linha = Linha.deletar(db.db.get('linhas').value(), id);
     if (linha) {
         res.json({ message: 'Linha excluída com sucesso', linha });
     } else {

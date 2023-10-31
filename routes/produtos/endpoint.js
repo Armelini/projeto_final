@@ -34,7 +34,7 @@ router.post("/", (req, res) => {
 router.put('/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const { nome, descricao, referencia, idLinha, idSerie } = req.body;
-    const produto = Produto.atualizar(db.db.get('produtos'), nome, descricao, referencia, id, idLinha, idSerie);
+    const produto = Produto.atualizar(db.db.get('produtos').value(), nome, descricao, referencia, id, idLinha, idSerie);
     if (produto) {
         res.json(produto);
     } else {
@@ -44,7 +44,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const produto = Produto.deletar(db.db.get('produtos'), id);
+    const produto = Produto.deletar(db.db.get('produtos').value(), id);
     if (produto) {
         res.json({ message: 'Produto excluído com sucesso', produto });
     } else {
