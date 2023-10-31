@@ -7,6 +7,14 @@
       "id": 1,
       "idLinha": 1,
       "idSerie": 1
+    },
+    {
+      "nome": "Vitória",
+      "descricao": "Linha Banho; Série Luxo; Dimensões: 180cm x 65cm; 100% Algodão; Fio 30/1 penteado.",
+      "referencia": "123456_ABC",
+      "id": 2,
+      "idLinha": 1,
+      "idSerie": 3
     }
   ],
   "linhas": [

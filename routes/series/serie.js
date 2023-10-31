@@ -4,9 +4,8 @@ class Serie {
         this.id = id;
     }
 
-    static criar(series, nome, id) {
+    static criar(nome, id) {
         const serie = new Serie(nome, id);
-        series.push(serie);
         return serie;
     }
 

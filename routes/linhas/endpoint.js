@@ -22,14 +22,19 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
     const nome = req.body;
     const id = db.db.get('linhas').value().length + 1; // Simplesmente incrementa o ID
-    const linha = Linha.criar(db.db.get("linhas"), id, nome)
-    res.json(201).json(linha);
+    const linha = Linha.criar(nome, id);
+    if (linha) {
+        db.db.get('linhas').push(linha).write();
+        res.status(201).json(linha);
+    } else {
+        res.status(500).json({ message: "Erro na inserção da linha!" });
+    }
 });
 
 router.put('/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const nome = req.body.nome;
-    const linha = Linha.atualizar(db.db.get('linhas'), id, nome);
+    const linha = Linha.atualizar(db.db.get('linhas'), nome, id);
     if (linha) {
         res.json(linha);
     } else {

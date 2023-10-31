@@ -4,9 +4,8 @@ class Linha {
         this.id = id;
     }
 
-    static criar(linhas, nome, id) {
+    static criar(nome, id) {
         const linha = new Linha(nome, id);
-        linhas.push(linha);
         return linha;
     }
 

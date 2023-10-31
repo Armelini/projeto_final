@@ -23,10 +23,10 @@ router.post("/", (req, res) => {
     const { nome, descricao, referencia, idLinha, idSerie } = req.body;
     const id = db.db.get('produtos').value().length + 1; // Simplesmente incrementa o ID
     const produto = Produto.criar(nome, descricao, referencia, id, idLinha, idSerie);
-    if (produto) { 
+    if (produto) {
         db.db.get('produtos').push(produto).write();
         res.status(201).json(produto);
-    } else { 
+    } else {
         res.status(500).json({ message: "Erro na inserção do produto!" });
     }
 });
@@ -44,7 +44,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const produto = Produto.deletar(db.db.get('clientes'), id);
+    const produto = Produto.deletar(db.db.get('produtos'), id);
     if (produto) {
         res.json({ message: 'Produto excluído com sucesso', produto });
     } else {
