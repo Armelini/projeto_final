@@ -7,14 +7,6 @@
       "id": 1,
       "idLinha": 1,
       "idSerie": 3
-    },
-    {
-      "nome": "A",
-      "descricao": "A",
-      "referencia": "X",
-      "id": 2,
-      "idLinha": 2,
-      "idSerie": 2
     }
   ],
   "linhas": [
@@ -47,18 +39,6 @@
     {
       "nome": "Básica",
       "id": 3
-    },
-    {
-      "nome": "Teste2",
-      "id": 4
-    },
-    {
-      "nome": "Teste5",
-      "id": 5
-    },
-    {
-      "nome": "Teste11111",
-      "id": 6
     }
   ]
 }

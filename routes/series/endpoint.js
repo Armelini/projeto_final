@@ -5,7 +5,7 @@ const db = jsonServer.router('data/db.json');
 const Serie = require('./serie');
 
 router.get("/", (req, res) => {
-    const series = Serie.listar(db.db.get("series"));
+    const series = Serie.listar(db.db.get("series").value());
     res.json(series);
 });
 
@@ -46,6 +46,10 @@ router.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const serie = Serie.deletar(db.db.get('series').value(), id);
     if (serie) {
+        db.db
+            .get('series')
+            .remove({ id: parseInt(id) })
+            .write()
         res.json({ message: 'Série excluída com sucesso', serie });
     } else {
         res.status(404).json({ message: 'Série não encontrada' });

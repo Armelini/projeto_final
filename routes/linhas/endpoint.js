@@ -5,7 +5,7 @@ const db = jsonServer.router('data/db.json');
 const Linha = require('./linha');
 
 router.get("/", (req, res) => {
-    const linhas = Linha.listar(db.db.get("linhas"));
+    const linhas = Linha.listar(db.db.get("linhas").value());
     res.json(linhas);
 });
 
@@ -46,6 +46,10 @@ router.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const linha = Linha.deletar(db.db.get('linhas').value(), id);
     if (linha) {
+        db.db
+            .get('linhas')
+            .remove({ id: parseInt(id) })
+            .write()
         res.json({ message: 'Linha excluída com sucesso', linha });
     } else {
         res.status(404).json({ message: 'Linha não encontrada' });

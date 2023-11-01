@@ -5,7 +5,7 @@ const db = jsonServer.router('data/db.json');
 const Produto = require('./produto');
 
 router.get("/", (req, res) => {
-    const produtos = Produto.listar(db.db.get("produtos"));
+    const produtos = Produto.listar(db.db.get("produtos").value());
     res.json(produtos);
 });
 
@@ -46,6 +46,10 @@ router.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const produto = Produto.deletar(db.db.get('produtos').value(), id);
     if (produto) {
+        db.db
+            .get('produtos')
+            .remove({ id: parseInt(id) })
+            .write()
         res.json({ message: 'Produto excluído com sucesso', produto });
     } else {
         res.status(404).json({ message: 'Produto não encontrado' });
