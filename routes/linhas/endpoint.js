@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
     const id = parseInt(req.params.id);
-    const linha = Linha.obter(db.db.get("linhas"), id);
+    const linha = Linha.obter(db.db.get("linhas").value(), id);
     if (linha) {
         res.json(linha);
     } else {

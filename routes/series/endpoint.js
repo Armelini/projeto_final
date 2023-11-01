@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
     const id = parseInt(req.params.id);
-    const serie = Serie.obter(db.db.get("series"), id);
+    const serie = Serie.obter(db.db.get("series").value(), id);
     if (serie) {
         res.json(serie);
     } else {
